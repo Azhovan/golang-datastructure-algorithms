@@ -11,6 +11,15 @@ type Node struct {
 
 type LinkedList struct {
 	headNode *Node
+	len      int // length
+}
+
+func (l *LinkedList) increaseLength() {
+	l.len++
+}
+
+func (l *LinkedList) Len() int {
+	return l.len
 }
 
 func (l *LinkedList) AddToHead(property int) {
@@ -20,6 +29,7 @@ func (l *LinkedList) AddToHead(property int) {
 	}
 
 	l.headNode = node
+	l.increaseLength()
 }
 
 // iterate over the list and print the nodes
@@ -52,6 +62,7 @@ func (l *LinkedList) AddToEnd(property int) {
 		nextNode: nil,
 	}
 	lastNode.nextNode = newNode
+	l.increaseLength()
 }
 
 // return true if there will be at least one occurrence of the p in LinkedList l
@@ -92,6 +103,7 @@ func (l *LinkedList) AddAfter(p int, n int) {
 				nextNode: node.nextNode,
 			}
 			node.nextNode = newNode
+			l.increaseLength()
 		}
 	}
 }

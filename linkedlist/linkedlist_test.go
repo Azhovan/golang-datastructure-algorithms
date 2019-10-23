@@ -1,6 +1,8 @@
 package linkedlist
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestLinkedList_Has(t *testing.T) {
 	var list LinkedList
@@ -17,8 +19,8 @@ func TestLinkedList_Index(t *testing.T) {
 	list.AddToHead(10)
 	list.AddAfter(10, 11)
 
-	if b := list.Has(11); b == false {
-		t.Errorf("list should has value 11")
+	if  list.Index(11) != 1 {
+		t.Errorf("list should has value 11 at index 1")
 	}
 }
 
@@ -91,4 +93,14 @@ func TestLinkedList_AddToHead(t *testing.T) {
 		t.Errorf("list2 does not have head yet")
 	}
 
+}
+
+func TestLinkedList_Len(t *testing.T) {
+	var l LinkedList
+	l.AddToHead(2)
+	l.AddToEnd(3)
+
+	if l.Len() != 2 {
+		t.Errorf("length of the linkedlist should be 2, given %d", l.len)
+	}
 }
