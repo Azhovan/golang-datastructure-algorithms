@@ -24,15 +24,34 @@ func setup() {
 func DeleteNodeAt(key int) {
 	setup()
 
+	if key == 0 {
+		DeleteHead(key)
+	} else {
+		DeleteNoneHeadNodeAt(key)
+	}
+
+	list.decreaseLength()
+	fmt.Printf("after deletion list size is: %d\n", list.len)
+	list.IterateList()
+
+}
+
+func DeleteHead(key int) {
+	// if it is head
+	// introduce new element as head
+	// remove old head from list
+	newHead := list.headNode.nextNode
+	list.headNode.nextNode = nil // remove reference to hel gc to remove it
+	list.headNode = newHead
+}
+
+func DeleteNoneHeadNodeAt(key int) {
+
 	// find elem in key-1
-	node := list.FindByIndex(key-1)
+	node := list.FindByIndex(key - 1)
 	next := node.nextNode.nextNode
 	// remove the reference of deleted node
 	node.nextNode.nextNode = nil
 	// set the reference to new element
 	node.nextNode = next
-	list.decreaseLength()
-
-	fmt.Printf("after deletion list size is: %d\n", list.len)
-	list.IterateList()
 }
