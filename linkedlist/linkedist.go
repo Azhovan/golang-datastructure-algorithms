@@ -21,6 +21,10 @@ func (l *LinkedList) increaseLength() {
 	l.len++
 }
 
+func (l *LinkedList) decreaseLength() {
+	l.len--
+}
+
 func (l *LinkedList) Len() int {
 	return l.len
 }
@@ -40,6 +44,7 @@ func (l *LinkedList) IterateList() {
 	for node := l.headNode; node != nil; node = node.nextNode {
 		fmt.Println(node.property)
 	}
+	fmt.Println("-----------")
 }
 
 // print the the last node value
@@ -156,3 +161,4 @@ func (l *LinkedList) Mean() int {
 		return l.FindByIndex(len / 2).property
 	}
 }
+
