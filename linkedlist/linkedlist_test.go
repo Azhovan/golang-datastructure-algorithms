@@ -115,7 +115,7 @@ func TestLinkedList_FindByIndex(t *testing.T) {
 	}
 }
 
-func TestLinkedList_Mid(t *testing.T) {
+func TestLinkedList_Mean(t *testing.T) {
 	var l LinkedList
 
 	l.AddToHead(2)
