@@ -127,7 +127,7 @@ func (l *LinkedList) Get(p int) *Node {
 }
 
 // find the node with index i
-func (l *LinkedList) FindByIndex(index int) *Node{
+func (l *LinkedList) FindByIndex(index int) *Node {
 	if l.Len() == 0 {
 		log.Fatalf("list is empty")
 	}
@@ -142,15 +142,17 @@ func (l *LinkedList) FindByIndex(index int) *Node{
 	return nil
 }
 
-func (l *LinkedList) Mid() float64 {
+// find the mean of the list
+// notice that we are calculating index, which is started from 0
+
+func (l *LinkedList) Mean() int {
 	len := l.Len()
-	d := len/2
 
 	if len%2 == 0 {
-		i := l.FindByIndex(d).property
-		j := l.FindByIndex(d +1).property
-		return float64((i+j)/2)
+		i := l.FindByIndex(len/2 - 1).property
+		j := l.FindByIndex(len / 2).property
+		return (i + j) / 2
 	} else {
-		return float64(l.FindByIndex(d).property)
+		return l.FindByIndex(len / 2).property
 	}
 }

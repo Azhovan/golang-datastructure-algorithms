@@ -19,7 +19,7 @@ func TestLinkedList_Index(t *testing.T) {
 	list.AddToHead(10)
 	list.AddAfter(10, 11)
 
-	if  list.Index(11) != 1 {
+	if list.Index(11) != 1 {
 		t.Errorf("list should has value 11 at index 1")
 	}
 }
@@ -110,24 +110,25 @@ func TestLinkedList_FindByIndex(t *testing.T) {
 	l.AddToHead(2)
 	l.AddToEnd(3)
 
-	if  n := l.FindByIndex(1).property; n != 3 {
+	if n := l.FindByIndex(1).property; n != 3 {
 		t.Errorf("element at index 1 is 3, given %d", n)
 	}
 }
 
 func TestLinkedList_Mid(t *testing.T) {
 	var l LinkedList
+
 	l.AddToHead(2)
 	l.AddToEnd(3)
 	l.AddToEnd(5)
 
-	if n:= l.Mid(); n!= 3 {
-		t.Errorf("mid value is 3. given %f",n)
+	if n := l.Mean(); n != 3 {
+		t.Errorf("mid value is 3. given %d", n)
 	}
 
 	l.AddToEnd(6)
 
-	if n:= l.Mid(); n!= 5 {
-		t.Errorf("mid value is 5. given %f",n)
+	if n := l.Mean(); n != 4 {
+		t.Errorf("mid value is 4. given %d", n)
 	}
 }
