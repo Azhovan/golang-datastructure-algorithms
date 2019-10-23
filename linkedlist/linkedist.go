@@ -1,6 +1,9 @@
 package linkedlist
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 // this is very basic linked-ist implementation
 // it could be generalized or implemented based on specific needs
@@ -111,7 +114,7 @@ func (l *LinkedList) AddAfter(p int, n int) {
 // return the node with property p
 func (l *LinkedList) Get(p int) *Node {
 	if l.Has(p) == false {
-		fmt.Errorf("node with value %d not found", p)
+		log.Fatalf("node with value %d not found", p)
 	}
 
 	for node := l.headNode; node != nil; node = node.nextNode {
@@ -121,4 +124,33 @@ func (l *LinkedList) Get(p int) *Node {
 	}
 
 	return nil
+}
+
+// find the node with index i
+func (l *LinkedList) FindByIndex(index int) *Node{
+	if l.Len() == 0 {
+		log.Fatalf("list is empty")
+	}
+	var i = 0
+	for node := l.headNode; node != nil; node = node.nextNode {
+		if i == index {
+			return node
+		} else {
+			i++
+		}
+	}
+	return nil
+}
+
+func (l *LinkedList) Mid() float64 {
+	len := l.Len()
+	d := len/2
+
+	if len%2 == 0 {
+		i := l.FindByIndex(d).property
+		j := l.FindByIndex(d +1).property
+		return float64((i+j)/2)
+	} else {
+		return float64(l.FindByIndex(d).property)
+	}
 }
