@@ -46,7 +46,6 @@ func DeleteHead(key int) {
 }
 
 func DeleteNoneHeadNodeAt(key int) {
-
 	// find elem in key-1
 	node := list.FindByIndex(key - 1)
 	next := node.nextNode.nextNode
@@ -54,4 +53,25 @@ func DeleteNoneHeadNodeAt(key int) {
 	node.nextNode.nextNode = nil
 	// set the reference to new element
 	node.nextNode = next
+}
+
+// delete all nodes from the beginning of the list to end
+// time complexity is O(1)
+func DeleteAllNodes() {
+	for i := 0; i < list.Len(); i++ {
+		DeleteNodeAt(i)
+	}
+	list.IterateList()
+}
+
+func Length() int {
+	setup()
+	return lengthRecursive(list.headNode)
+}
+
+func lengthRecursive(node *Node) int {
+	if node.nextNode == nil {
+		return 1
+	}
+	return lengthRecursive(node.nextNode) + 1
 }
