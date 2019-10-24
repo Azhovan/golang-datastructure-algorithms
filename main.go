@@ -6,4 +6,8 @@ func main() {
 	// linkedlist.DeleteAllNodes()
 	// linkedlist.Length() // 5
 	// fmt.Print(linkedlist.NthFromEnd(4))
+
+	// linkedlist.Revers()
+
+	// linkedlist.Revers()
 }
