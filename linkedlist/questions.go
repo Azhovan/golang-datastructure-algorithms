@@ -121,7 +121,6 @@ func Revers() {
 
 func reversList(prev, current, next *Node) {
 
-
 	if current == nil {
 		return
 	}
@@ -131,6 +130,5 @@ func reversList(prev, current, next *Node) {
 	if next == nil {
 		return
 	}
-
 	reversList(current, next, next.nextNode)
 }
