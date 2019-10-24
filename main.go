@@ -7,4 +7,5 @@ func main() {
 	// fmt.Print(linkedlist.Length()) // 5
 	// fmt.Print(linkedlist.NthFromEnd(4))
 	// linkedlist.Revers()
+	// linkedlist.SwapNodes(1,3)
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 )
+// Difficulty: medium
 
 //Given pointer to the head node of a linked list,
 // the task is to reverse the linked list.
