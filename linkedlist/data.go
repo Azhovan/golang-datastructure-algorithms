@@ -11,8 +11,12 @@ func setup() {
 	list.AddToEnd(1)
 	list.AddToEnd(2)
 	list.AddToEnd(3)
+	list.AddToEnd(5)
 	list.AddToEnd(4)
+	list.AddToEnd(5)
+	list.AddToEnd(5)
+	list.AddToEnd(5)
 
-	fmt.Println("list created.")
+	fmt.Println("created list: ")
 	list.IterateList()
 }
