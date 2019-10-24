@@ -20,3 +20,4 @@ func setup() {
 	fmt.Println("created list: ")
 	list.IterateList()
 }
+

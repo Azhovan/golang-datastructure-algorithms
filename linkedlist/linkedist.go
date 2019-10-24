@@ -12,9 +12,24 @@ type Node struct {
 	nextNode *Node
 }
 
+func NewNode(p int) *Node {
+	return &Node{
+		property: p,
+		nextNode: nil,
+	}
+}
+
+func (n *Node) NextNode(next *Node) {
+	n.nextNode = next
+}
+
 type LinkedList struct {
 	headNode *Node
 	len      int // length
+}
+
+func (l *LinkedList) SetHead(n *Node) {
+	l.headNode = n
 }
 
 func (l *LinkedList) increaseLength() {
@@ -161,4 +176,3 @@ func (l *LinkedList) Mean() int {
 		return l.FindByIndex(len / 2).property
 	}
 }
-

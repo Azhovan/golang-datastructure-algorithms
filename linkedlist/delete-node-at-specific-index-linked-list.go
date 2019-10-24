@@ -22,7 +22,6 @@ func DeleteNodeAt(key int) {
 	list.decreaseLength()
 	fmt.Printf("after deletion list size is: %d\n", list.len)
 	list.IterateList()
-
 }
 
 func DeleteHead(key int) {
