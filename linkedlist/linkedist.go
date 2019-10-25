@@ -23,6 +23,10 @@ func (n *Node) NextNode(next *Node) {
 	n.nextNode = next
 }
 
+func (n *Node) Property() int{
+	return n.property
+}
+
 type LinkedList struct {
 	headNode *Node
 	len      int // length

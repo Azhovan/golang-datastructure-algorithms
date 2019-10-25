@@ -9,6 +9,31 @@ func main() {
 
 }
 
+
+// example
+func detect_cycle_floyd_algorithm() {
+	n4 := linkedlist.NewNode(5)
+	n3 := linkedlist.NewNode(4)
+	n2 := linkedlist.NewNode(3)
+	n1 := linkedlist.NewNode(2)
+	n0 := linkedlist.NewNode(1)
+	n0.NextNode(n1)
+	n1.NextNode(n0) // loop here !
+	n2.NextNode(n3)
+	n3.NextNode(n4)
+	n4.NextNode(n1)
+
+	var l linkedlist.LinkedList
+	l.SetHead(n0)
+
+	found, meetingNode := linkedlist.Floyd_cycle_detection_algorithm(l)
+	fmt.Print("cycle : ", found)
+	if found == true {
+		fmt.Print("the first node of the cycle has ", meetingNode.Property(), " value")
+	}
+
+}
+
 // example
 func find_loop_example() {
 	n4 := linkedlist.NewNode(5)
