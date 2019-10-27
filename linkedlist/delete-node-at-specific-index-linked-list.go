@@ -10,8 +10,16 @@ import (
 // find the element at key-1 (element(key-1))
 // do element(key-1).next = element(key).next
 // delete element(key)
+
+
 func DeleteNodeAt(key int) {
 	setup()
+
+	// EDGE CASE : if the position does not exist,
+	// return the current linked-list
+	if key > list.Len() -1 {
+		return
+	}
 
 	if key == 0 {
 		DeleteHead(key)
