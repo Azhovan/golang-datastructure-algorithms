@@ -68,6 +68,7 @@ func other_examples() {
 	// linkedlist.SwapNodes(1,3)
 	// fmt.Println(linkedlist.CountKey(5))
 	//linkedlist.DeleteNodeAt(0)
+	// linkedlist.RemoveDuplicates()
 }
 
 func count_all_keys_occurrence_examples() {
