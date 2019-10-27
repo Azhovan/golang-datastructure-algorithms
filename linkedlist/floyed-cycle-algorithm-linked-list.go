@@ -10,6 +10,7 @@ func Floyd_cycle_detection_algorithm(list LinkedList) (bool, *Node) {
 		if hare == nil {
 			break
 		}
+
 		hare = hare.nextNode.nextNode
 		trutle = trutle.nextNode
 
