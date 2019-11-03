@@ -6,11 +6,25 @@ import (
 )
 
 func main() {
-	linkedlist.NonRecursiveChunkLinkedList(3)
+	 recursive_chunke_linked_list(3)
+}
+
+func recursive_chunke_linked_list(k int) {
+	var l linkedlist.LinkedList
+	l.AddToHead(1)
+	l.AddToEnd(2)
+	l.AddToEnd(3)
+	l.AddToEnd(4)
+	l.AddToEnd(5)
+	l.AddToEnd(6)
+	l.AddToEnd(7)
+
+	start:= l.FindByIndex(0)
+	linkedlist.RecursiveChunkLinkedList(start, start, k)
 }
 
 // print linked list in a chunk
-func chunked_linked_list() {
+func non_recursive_chunked_linked_list() {
 	linkedlist.NonRecursiveChunkLinkedList(3)
 }
 

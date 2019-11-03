@@ -5,7 +5,34 @@ import (
 	"strings"
 )
 
-//  chunk linked list none recursive
+// Solution
+// hold start
+// move the end pointer to next
+// deduct in each step 1 from k
+func RecursiveChunkLinkedList(start, end *Node, k int) {
+	if k == 1 {
+		// print it
+		for s := start; s!= end.nextNode; s = s.nextNode {
+			k++
+			fmt.Println(s.property)
+		}
+		fmt.Println(strings.Repeat("-", 5))
+
+		start = end.nextNode
+	}
+
+	// edge case
+	if end == nil {
+		fmt.Println(start.property)
+		return
+	}
+
+	RecursiveChunkLinkedList(start, end.nextNode, k-1)
+}
+
+
+
+// create chunks with size k from linked list l
 // Solution :
 // every chunk has start, and size (k)
 // loop over the list count the nodes
