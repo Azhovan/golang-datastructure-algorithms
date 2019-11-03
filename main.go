@@ -6,9 +6,13 @@ import (
 )
 
 func main() {
-
+	linkedlist.NonRecursiveChunkLinkedList(3)
 }
 
+// print linked list in a chunk
+func chunked_linked_list() {
+	linkedlist.NonRecursiveChunkLinkedList(3)
+}
 
 // example
 func detect_cycle_floyd_algorithm() {
