@@ -67,14 +67,12 @@ func FindIndex(text, pat string) int {
 
 	for ; i < len(text) && j <len(pat); {
 		if text[i] == pat[j] {
-			fmt.Println("found: ", i, j)
 			if j == len(pat)-1 {
 				return i - (len(pat) - 1)
 			}
 			i++
 			j++
 		} else {
-			fmt.Println("not found: ", i, j)
 			j--
 			if j < 0 {
 				j = 0
