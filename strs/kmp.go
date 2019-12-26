@@ -1,7 +1,5 @@
 package strs
 
-import "fmt"
-
 // Knuth-Morris-Pratt KMP String Matching Algorithm
 
 // prepare the the lsp table
@@ -33,13 +31,14 @@ func LspTable(pat string) []int {
 
 	return lsp
 }
+
 // return true if the pattern is matched
 func FindPattern(text, pat string) bool {
 	lsp := LspTable(pat)
 	i, j := 0, 0
 	found := false
 
-	for ; i < len(text) && j <len(pat); {
+	for ; i < len(text) && j < len(pat); {
 		if text[i] == pat[j] {
 			if j == len(pat)-1 {
 				found = true
@@ -65,7 +64,7 @@ func FindIndex(text, pat string) int {
 	lsp := LspTable(pat)
 	i, j := 0, 0
 
-	for ; i < len(text) && j <len(pat); {
+	for ; i < len(text) && j < len(pat); {
 		if text[i] == pat[j] {
 			if j == len(pat)-1 {
 				return i - (len(pat) - 1)
@@ -84,4 +83,3 @@ func FindIndex(text, pat string) int {
 	}
 	return -1
 }
-
