@@ -1,21 +1,11 @@
 package main
 
 import (
-	"data-structure/array"
 	"fmt"
 	"hackerrank-solutions/linkedlist"
 )
 
 func main() {
-	//var c = []byte{1,2,3,4}
-	//var r int
-	//for i, v := range c {
-	//	r += int(v) * int(math.Pow(float64(10), float64(len(c)-i-1)))
-	//}
-	//fmt.Println(r)
-	var a  = []int {-2, 1, -3, 4, -1, 2, 1, -5, 4}
-	fmt.Println(array.MaxSubArray(a))
-
 
 }
 
