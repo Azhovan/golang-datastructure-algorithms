@@ -1,17 +1,22 @@
 package main
 
 import (
-	"data-structure/strs"
+	"data-structure/array"
 	"fmt"
 	"hackerrank-solutions/linkedlist"
 )
 
 func main() {
-	// s := "st"
-	// fmt.Println(strs.LspTable(s))
-	pat := "an"
-	txt := "lrnkbldxguzgcseccinlizyogwqzlifxcthdgmanjztlt"
-	fmt.Println(strs.FindIndex(txt, pat))
+	//var c = []byte{1,2,3,4}
+	//var r int
+	//for i, v := range c {
+	//	r += int(v) * int(math.Pow(float64(10), float64(len(c)-i-1)))
+	//}
+	//fmt.Println(r)
+	var a  = []int {-2, 1, -3, 4, -1, 2, 1, -5, 4}
+	fmt.Println(array.MaxSubArray(a))
+
+
 }
 
 func recursive_chunke_linked_list(k int) {

@@ -8,6 +8,16 @@ func TestMaximumSumSubArray(t *testing.T) {
 	max := MaximumSumSubArray(A)
 
 	if max != 6 {
-		t.Errorf("wrong max sum, expected is sum of  %v got %d", expexted,  max)
+		t.Errorf("wrong max sum, expected is sum of  %v got %d", expexted, max)
+	}
+}
+
+func TestMinimumSumSubArray(t *testing.T) {
+	var A = []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
+	var expexted = []int {-5}
+	min := MinimumSumSubArray(A)
+
+	if min != -5 {
+		t.Errorf("wrong max sum, expected is sum of  %v got %d", expexted, min)
 	}
 }
