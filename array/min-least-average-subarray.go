@@ -13,7 +13,35 @@ import "math"
 //Input:  arr[] = {3, 7, 5, 20, -10, 0, 12}, k = 2
 //Output: Subarray between [4, 5] has minimum average
 
-func MinAverageSubarray(A []int, k int) []int {
+// Time complexity: O(n)
+// efficient way
+func MinAverageSubarray2(A []int, k int) []int {
+	if len(A) < k {
+		return []int{}
+	}
+	minAvg := math.MaxInt64
+	index:= 0
+
+	// find the first window
+	windowAvg := 0
+	for i := 0; i < k; i++ {
+		windowAvg += A[i]
+	}
+
+	// move window
+	for i := 1; i < len(A) && i+k <= len(A); i++ {
+		windowAvg += A[i+k-1] - A[i-1]
+		if windowAvg < minAvg {
+			minAvg = windowAvg
+			index = i
+		}
+	}
+	return A[index:index+k]
+}
+
+// Time complexity : O(nk)
+// this algorithm is not bad at all
+func MinAverageSubarray1(A []int, k int) []int {
 	minAvg := math.MaxInt64
 	calAvg := 0
 	start := 0
@@ -33,3 +61,4 @@ func MinAverageSubarray(A []int, k int) []int {
 	}
 	return A[start : start+k]
 }
+
