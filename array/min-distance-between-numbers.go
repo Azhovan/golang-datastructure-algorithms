@@ -37,11 +37,5 @@ func MinDistanceBetweenNumbers(A []int, x, y int) int {
 			}
 		}
 	}
-
-	//if currentCount > 0 {
-	//	if minCount > currentCount {
-	//		minCount = currentCount
-	//	}
-	//}
 	return minCount
 }
